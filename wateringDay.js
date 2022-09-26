@@ -3,6 +3,8 @@
 //water all other plants on Sundays
 //water ferns on Wednesdays also
 
+function wateringDay() {
+
 const week = [1, 2, 3, 4, 5];
 
 const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -17,8 +19,6 @@ const weekOfMonth = week[index];
 
 console.log(`Week: ${weekOfMonth}`);
 console.log(`Day: ${dayOfWeek}`);
-
-function wateringDay(day, week) {
 
   if(day === "Sunday" && week === 1) {
     console.log("Water ALL plants");
@@ -36,4 +36,4 @@ function wateringDay(day, week) {
 
 }
 
-wateringDay(dayOfWeek, weekOfMonth);
+wateringDay();
