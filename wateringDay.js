@@ -15,5 +15,25 @@ index = Math.floor(Math.random() * 5);
 
 const weekOfMonth = week[index];
 
-console.log(dayOfWeek);
-console.log(weekOfMonth);
+console.log(`Week: ${weekOfMonth}`);
+console.log(`Day: ${dayOfWeek}`);
+
+function wateringDay(day, week) {
+
+  if(day === "Sunday" && week === 1) {
+    console.log("Water ALL plants");
+    return true;
+  } else if (day === "Sunday" && week !== 1) {
+    console.log("Water all plants EXCEPT succulants");
+    return true;
+  } else if (day === "Wednesday") {
+    console.log("Water ferns ONLY");
+    return true;
+  } else {
+    console.log("Today is not a watering day");
+    return false;
+  }
+
+}
+
+wateringDay(dayOfWeek, weekOfMonth);
