@@ -16,25 +16,35 @@ function rockPaperScissors() {
   if (player1 === player2) {
     printPlay(player1, player2);
     console.log("DRAW! Play again!\n");
-    return true;
+    return true; //to continue to the loop
   } else if (player1 === "rock") {
       if (player2 === "paper") {
         printPlay(player1, player2);
-        console.log("Player 2 Wins!\n");
-        return false;
+        console.log("Player 2 Wins!");
+        return false; //to break the loop
       } else {
         printPlay(player1, player2);
-        console.log("Player 1 Wins!\n");
+        console.log("Player 1 Wins!");
         return false;
       }
+  } else if (player1 === "paper") {
+    if (player2 === "rock") {
+      printPlay(player1, player2);
+      console.log("Player 1 Wins!");
+      return false;
+    } else {
+      printPlay(player1, player2);
+      console.log("Player 2 Wins!");
+      return false;
+    }
   } else if (player1 === "scissor") {
     if (player2 === "rock") {
       printPlay(player1, player2);
-      console.log ("Player 2 Wins!\n");
+      console.log ("Player 2 Wins!");
       return false;
     } else if (player2 === "paper") {
       printPlay(player1, player2);
-      console.log("Player 1 Wins!\n");
+      console.log("Player 1 Wins!");
       return false;
     }
   }
@@ -43,5 +53,5 @@ function rockPaperScissors() {
 //run the function. If it returns true, continue to run the function until it returns false
 //if it returns false, break the loop and declare the winner
 do {
-  console.log(rockPaperScissors()); //console log added for debugging purposes
-} while (rockPaperScissors());
+  tie = rockPaperScissors(); //declare a variable without a keyword to make it a global variable, thus usable in the conditon
+} while (tie); //while tie === true, run the loop again
